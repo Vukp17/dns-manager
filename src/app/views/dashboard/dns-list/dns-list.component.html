@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+       class="mat-elevation-z8">
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+      Type
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="ttl">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+      TTL
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.ttl}} </td>
+  </ng-container>
+  <ng-container matColumnDef="rdata">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      RDATA
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.rdata}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

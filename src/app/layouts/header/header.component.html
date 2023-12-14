@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <span>eDNS</span>
+  <span class="example-fill-remaining-space"></span>
+
+  <!-- Add your buttons here -->
+  <button mat-button>Button 1</button>
+  <button mat-button>Button 2</button>
+
+  <!-- Add user icon with dropdown -->
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
